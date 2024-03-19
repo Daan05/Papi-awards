@@ -139,43 +139,43 @@ def turnMotor1_3(degrees, direction):
         exit( 1 )
 
 def main():
-# wacht tot 95 graden
-# while temp < 95:
-# time.sleep(1)
+  # wacht tot 95 graden
+  # while temp < 95:
+  # time.sleep(1)
 
-# motor2 omhoog(clockwise/counterclockwise) voor ... deg
-# False = up, True = down
-turnMotor2(360, False)
+  # motor2 omhoog(clockwise/counterclockwise) voor ... deg
+  # False = up, True = down
+  turnMotor2(360, False)
 
-# motor1 clockwise, motor3 counterclockwise
-turnMotor1_3(1080, True)
+  # motor1 clockwise, motor3 counterclockwise
+  turnMotor1_3(1080, True)
 
-# motor2 omlaag() voor ... deg
-turnMotor2(360, True)
+  # motor2 omlaag() voor ... deg
+  turnMotor2(360, True)
 
-# wacht 2 min
-time.sleep(120)
+  # wacht 2 min
+  time.sleep(120)
 
-# motor2 omhoog() voor ... deg
-turnMotor2(360, False)
+  # motor2 omhoog() voor ... deg
+  turnMotor2(360, False)
 
-# motor1 clockwise, motor3 counterclockwise
-turnMotor1_3(1080, True)
+  # motor1 clockwise, motor3 counterclockwise
+  turnMotor1_3(1080, True)
 
-# motor2 omlaag() voor .. deg
-turnMotor2(360, True)
+  # motor2 omlaag() voor .. deg
+  turnMotor2(360, True)
 
-# wacht 20 sec
-time.sleep(20)
+  # wacht 20 sec
+  time.sleep(20)
 
-# motor2 omhoog
-turnMotor2(360, True)
+  # motor2 omhoog
+  turnMotor2(360, True)
 
-# motor1 counterclockwise, motor3 clockwise
-turnMotor1_3(2160, False)
+  # motor1 counterclockwise, motor3 clockwise
+  turnMotor1_3(2160, False)
 
-# motor 2 omlaag
-turnMotor2(360, True)
+  # motor 2 omlaag
+  turnMotor2(360, True)
 
 main()
 cleanup()
