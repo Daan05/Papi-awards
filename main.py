@@ -109,25 +109,27 @@ def turnMotor2(degrees, direction):
         exit( 1 )
 
 def turnMotor1_3(degrees, direction):
+    def turnMotor1_3(degrees, direction):
     motor_pins1_ = motor_pins1
     motor_pins3_ = motor_pins3
     one_step = 0.087890625
     step_count = math.floor(degrees / one_step)
     motor_step_counter1 = 0
     motor_step_counter3 = 0
+    speed = 0.5
 
     try:
         i = 0
         for i in range(step_count):
             for pin in range(0, len(motor_pins1)):
-                GPIO.output( motor_pins1_[pin], step_sequence[motor_step_counter1][pin] )
-                GPIO.output( motor_pins3_[pin], step_sequence[motor_step_counter3][pin] )
+                GPIO.output( motor_pins1_[pin], step_sequence[math.floor(motor_step_counter1)][pin] )
+                GPIO.output( motor_pins3_[pin], step_sequence[math.floor(motor_step_counter3)][pin] )
             if direction==True:
-                motor_step_counter1 = (motor_step_counter1 + 1) % 8
-                motor_step_counter3 = (motor_step_counter3 + 1) % 8
+                motor_step_counter1 = (motor_step_counter1 + ((1.5) * speed)) % 8
+                motor_step_counter3 = (motor_step_counter3 + ((1.0) * speed)) % 8
             elif direction==False:
-                motor_step_counter1 = (motor_step_counter1 - 1) % 8
-                motor_step_counter3 = (motor_step_counter3 - 1) % 8
+                motor_step_counter1 = (motor_step_counter1 - ((1.0) * speed)) % 8
+                motor_step_counter3 = (motor_step_counter3 - ((1.5) * speed)) % 8
             else: # defensive programming
                 print( "uh oh... direction should *always* be either True or False" )
                 cleanup()
